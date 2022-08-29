@@ -1,3 +1,5 @@
+var readline = require('readline');
+
 function divisivel(num) {
     const n = parseInt(num)
     let total = 0
@@ -10,4 +12,14 @@ function divisivel(num) {
     return total
 }
 
-console.log(divisivel(10))
+
+let terminal = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+terminal.question("Digite um valor\n", function(answer) {
+    let resp = answer;
+    console.log("\nA Resposta é '" + divisivel(resp)+ "'");
+    terminal.close();
+});
